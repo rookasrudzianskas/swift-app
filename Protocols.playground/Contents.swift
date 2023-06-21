@@ -88,6 +88,10 @@ struct Bike: Vehicle {
     }
 }
 
+struct Worm {
+    
+}
+
 var bike = Bike()
 bike.speed
 bike.increaseSpeed(by: 10)
@@ -103,6 +107,50 @@ func describe(obj: Any) {
 
 
 describe(obj: bike)
+//let worm = Worm()
+//describe(obj:
+//bike.increaseSpeed(by: <#T##Int#>)
+
+func increaseSpeedIfVehicle(obj: Any) {
+    if var vehicle = obj as? Vehicle {
+        vehicle.speed
+        vehicle.increaseSpeed(by: 10)
+        vehicle.speed
+    } else {
+        "This is not vehicle"
+    }
+}
+
+
+increaseSpeedIfVehicle(obj: bike)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
