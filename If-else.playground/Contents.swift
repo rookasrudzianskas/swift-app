@@ -33,4 +33,15 @@ if myName == "Rokas" && myAge == 20 {
 
 if myAge == 20 || myName == "Rokas" {
     "Either age is 20 or the name is Rokas"
+} else if myName == "Foo" {
+    "Are you Foo?"
 }
+
+if myName == "Rokas"
+    && myAge == 20
+    && yourName == "Foo"
+    || yourAge == 30 {
+    "My name is Rokas and your name is Foo or you are 30"
+}
+
+
