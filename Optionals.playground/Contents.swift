@@ -129,3 +129,10 @@ func getFullName(firstName: String, lastName: String) -> String? {
 }
 
 getFullName(firstName: "Rokas", lastName: "RUdzianskas")
+
+func getFullName2(firstName: String, lastName: String) -> String? {
+    guard let lastName else {
+        return nil
+    }
+    return "Something"
+}
