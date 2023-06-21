@@ -123,6 +123,7 @@ func increaseSpeedIfVehicle(obj: Any) {
 
 
 increaseSpeedIfVehicle(obj: bike)
+bike.speed
 
 
 
