@@ -44,7 +44,7 @@ if myName == "Rokas"
     "My name is Rokas and your name is Foo or you are 30"
 }
 
-if (myAge == "Rokas" && myAge == 20) && (yourName == "Foo" || yourAge == 30) {
+if (myName == "Rokas" && myAge == 20) && (yourName == "Foo" || yourAge == 30) {
     "Now this works fine"
 }
 
