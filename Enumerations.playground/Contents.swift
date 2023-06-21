@@ -184,3 +184,38 @@ if let snow = FavoriteEmoji(rawValue: "❄️") {
 } else {
     "This emoji does not exists"
 }
+
+enum Height {
+    case short, medium, long
+    mutating func makeLong() {
+        self = Height.long
+    }
+}
+
+var myHeight = Height.medium
+myHeight.makeLong()
+myHeight
+
+indirect enum IntOperation {
+    case add(Int, Int)
+    case subtract(Int, Int)
+    case freeHand(IntOperation)
+    
+    func calculateResult(
+        of operation: IntOperation? = nil
+    ) -> Int {
+        switch operation ?? self {
+        case let .add(lhs, rhs):
+            return lhs + rhs
+        case let .subtract(lhs, rhs):
+            return lhs - rhs
+        case let .freeHand(operation):
+            return calculateResult(of: operation)
+        }
+    }
+}
+
+let freeHand = IntOperation.freeHand(.add(2 , 4))
+freeHand.calculateResult()
+
+
