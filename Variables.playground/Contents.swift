@@ -49,6 +49,8 @@ let someNames = NSMutableArray(
     ]
 )
 
+// someNames = ["Bla"]
+
 func changeTheArray(_ array: NSArray) {
     let copy = array as! NSMutableArray
     copy.add("Baz")
