@@ -8,7 +8,7 @@ noArgumentsAndNoReturnValue()
 
 func plusTwo(value: Int) {
     let newValue = value + 2
-    return newValue
+    
 }
 
 plusTwo(value: 1)
@@ -30,3 +30,10 @@ func customMinus(_ lhs: Int, _ rhs: Int) -> Int {
 }
 
 let customSubstracted = customMinus(20, 10)
+
+let added = customAdd(value1: 20, value2: 30)
+
+@discardableResult
+func myCustomAdd(_ lhs: Int, _ rhs: Int) -> Int {
+    lhs + rhs
+}
