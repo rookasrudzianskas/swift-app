@@ -1,11 +1,14 @@
 import Foundation
 import CoreGraphics
 
-func performInt( _ op: (Int, Int) -> Int, on lhs: Int, and rhs: Int) -> Int {
+func perform<N: Numeric>( _ op: (N, N) -> N, on lhs: N, and rhs: N) -> N {
     op(lhs, rhs)
 }
 
-performInt(+, on: 10, and: 20)
-performInt(-, on: 10, and: 20)
-performInt(*, on: 10, and: 20)
-performInt(/, on: 10, and: 20)
+let x = perform(+, on: 10.01, and: 20.03)
+x
+//
+//performInt(+, on: 10, and: 20)
+//performInt(-, on: 10, and: 20)
+//performInt(*, on: 10, and: 20)
+//performInt(/, on: 10, and: 20)
