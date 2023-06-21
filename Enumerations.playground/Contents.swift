@@ -1,7 +1,8 @@
 import Foundation
 
 enum Animals {
-    case cat, dog, rabbit
+    case cat, dog, rabbit,
+         hedgeHog
 }
 
 let cat = Animals.cat
@@ -22,9 +23,17 @@ case .cat:
 case .dog:
     "This is a dog"
     break
-default:
-    "This is soemthing else"
+case .rabbit:
+    break
+case .hedgeHog:
+    "This is a hedgedog"
+    break
 }
+func describeAnimal(_ animal: Animals) {
+
+}
+
+describeAnimal(Animals.rabbit)
 
 //func == (
 //    lhs: Animals,
