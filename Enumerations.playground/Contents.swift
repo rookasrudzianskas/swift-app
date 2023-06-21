@@ -41,3 +41,108 @@ describeAnimal(Animals.rabbit)
 //) -> Bool {
 //    lhs == .cat && rhs == 3
 //}
+
+enum Shortcut {
+    case fileOrFolder(path: URL, name: String)
+    case wwwUrl(path: URL)
+    case song(artist: String, songName: String)
+}
+
+let wwwApple = Shortcut.wwwUrl(path: URL(string: "https://apple.com")!)
+
+switch wwwApple {
+case .fileOrFolder(
+    path: let path,
+    name: let name
+):
+    path
+    name
+    break
+case .wwwUrl(
+    path: let path
+):
+    path
+    break
+case .song(
+    artist: let artist,
+    songName: let songName
+):
+    artist
+    songName
+    break
+}
+
+switch wwwApple {
+case .fileOrFolder(
+    let path,
+    let name
+):
+    path
+    name
+    break
+case .wwwUrl(
+    let path
+):
+    path
+    break
+case .song(
+    let artist,
+    let songName
+):
+    artist
+    songName
+    break
+}
+
+switch wwwApple {
+case let .fileOrFolder(
+    path,
+    name
+):
+    path
+    name
+    break
+case let .wwwUrl(
+    path
+):
+    path
+    break
+case let .song(
+    artist,
+    songName
+):
+    artist
+    songName
+    break
+}
+
+if case let .wwwUrl(path) = wwwApple {
+    path
+}
+
+let withoutYou = Shortcut.song(artist: "Symphont X", songName: "Without you")
+
+if case let .song(_, songName) = withoutYou {
+    songName
+}
+
+enum Vehicle {
+    case car(manufacturer: String, model: String)
+    case bike(manufacturer: String, yearMade: Int)
+    var manufacturer: String {
+        switch self {
+        case let .car(manufacturer, _), let .bike(manufacturer, _):
+            return manufacturer
+        }
+    }
+}
+
+let car  = Vehicle.car(
+    manufacturer: "Tesla", model: "X"
+)
+
+car.manufacturer
+
+let bike = Vehicle.bike(manufacturer: "HD", yearMade: 23213)
+
+bike.manufacturer
