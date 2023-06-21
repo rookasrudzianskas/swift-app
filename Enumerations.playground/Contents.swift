@@ -146,3 +146,34 @@ car.manufacturer
 let bike = Vehicle.bike(manufacturer: "HD", yearMade: 23213)
 
 bike.manufacturer
+
+
+
+enum FamilyMember: String {
+    case father = "Dad"
+    case mother = "Mom"
+    case sister = "Bro"
+    case brother = "Sis"
+}
+
+FamilyMember.father.rawValue
+FamilyMember.brother.rawValue
+FamilyMember.sister.rawValue
+
+enum FavoriteEmoji: String, CaseIterable {
+    case blush = "🚀"
+    case rocket = "🥰"
+    case fire = "🔥"
+}
+
+FavoriteEmoji.allCases
+FavoriteEmoji.allCases.map(\.rawValue)
+
+FavoriteEmoji.blush.rawValue
+
+if let blush = FavoriteEmoji(rawValue: "🚀") {
+    "Found"
+    blush
+} else {
+    "This emoji does not exists"
+}
