@@ -67,4 +67,90 @@ let names: Array<String> = ["FOO", "Bar"]
     "Bar Baz"
 ]
 
+protocol View {
+    func addSubView(_ view: View)
+}
+
+extension View {
+    func addSubView(_ view: View) {
+        
+    }
+}
+
+
+struct Button: View {
+    // empty
+}
+
+struct Table: View {
+    // empty
+}
+
+protocol PresentableAsView {
+    associatedtype ViewType: View
+    func produceView() -> ViewType
+    func configure(
+        superView: View,
+        thisView: ViewType
+    )
+    func present(
+        view: ViewType, on superView: View)
+}
+
+
+extension PresentableAsView {
+    func configure(
+        superView: View,
+        thisView: View
+    ) {
+        // empty by default
+    }
+    func present(
+        view: ViewType,
+        on superView: View
+    ) {
+        superView.addSubView(view)
+    }
+}
+
+
+struct MyButton: PresentableAsView {
+    func produceView() -> Button {
+        Button()
+    }
+    
+    func configure(superView: View, thisView: Button) {
+        <#code#>
+    }
+}
+
+
+extension PresentableAsView {
+    func doSomethingWithView() {
+        "This isa button"
+    }
+}
+
+let button = MyButton()
+//button.doSomethingWithButton()
+
+struct MyTable: PresentableAsView {
+    func produceView() -> Table {
+        Table()
+    }
+    
+    func configure(superView: View, thisView: Table) {
+        <#code#>
+    }
+}
+
+let myTable = MyTable()
+myTable.doSomethingWithView()
+
+
+extension [Int] {
+    func average() -> Double {
+        Double(self.reduce(0, +)) / Double(self.count)
+    }
+}
 
