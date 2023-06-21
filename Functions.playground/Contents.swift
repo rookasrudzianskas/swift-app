@@ -37,3 +37,20 @@ let added = customAdd(value1: 20, value2: 30)
 func myCustomAdd(_ lhs: Int, _ rhs: Int) -> Int {
     lhs + rhs
 }
+
+myCustomAdd(20, 39)
+
+func doSomethingComplicated(with value: Int) -> Int {
+    func mainLogic(value: Int) -> Int {
+        value + 2
+    }
+    return mainLogic(value: value + 2)
+}
+
+doSomethingComplicated(with: 30)
+
+func getFullName(firstName: String = "foo", lastName: String = "Bar") -> String {
+    "\(firstName) \(lastName)"
+}
+
+getFullName(firstName: "Rokas", lastName: "Rudzianskas")
