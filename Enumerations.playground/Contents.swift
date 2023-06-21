@@ -177,3 +177,10 @@ if let blush = FavoriteEmoji(rawValue: "🚀") {
 } else {
     "This emoji does not exists"
 }
+
+if let snow = FavoriteEmoji(rawValue: "❄️") {
+    "Snow exists "
+    snow
+} else {
+    "This emoji does not exists"
+}
