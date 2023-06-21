@@ -54,3 +54,27 @@ extension Car: GoesVroom {
 }
 
 modelX.goVroom()
+
+class MyDouble {
+    let value: Double
+    init(value: Double) {
+        self.value = value
+    }
+}
+
+extension MyDouble {
+    convenience init() {
+        self.init(value: 0)
+    }
+}
+
+let myDouble = MyDouble()
+myDouble.value
+
+extension GoesVroom {
+    func goVroomVroomEvenMore() -> String {
+        "\(self.vroomValue) isvrooming even more"
+    }
+}
+
+modelX.goVroomVroomEvenMore()
