@@ -100,3 +100,36 @@ if let yourCar = try? Car(manufacturer: "Tesla") {
 
 let theirCar = try! Car(manufacturer: "Ford")
 theirCar.manufacturer
+
+
+struct Dog {
+    let isInjured: Bool
+    let isSleeping: Bool
+    
+    enum BarkingErrors: Error {
+        case cannotBarkIsSleeping
+    }
+    
+    enum RunningErrors: Error {
+        case cannotRunIsInjured
+    }
+    
+    func bark() throws {
+        if isSleeping {
+            throw BarkingErrors.cannotBarkIsSleeping
+        }
+        "Barl..."
+    }
+    
+    func run() throws {
+        if isInjured {
+            throw RunningErrors.cannotRunIsInjured
+        }
+        "run"
+    }
+    
+    func barkAndRun() throws {
+        try bark()
+        try run()
+    }
+}
