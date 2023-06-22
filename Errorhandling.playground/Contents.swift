@@ -207,3 +207,17 @@ func getPreviousPositiveInteger(from int: Int) -> Result<Int, IntegerErrors> {
     
     return Result.success(int - 1)
 }
+
+//func performGet(
+//    forValue value: Int
+//{
+//    switch getPreviousPositiveInteger(from: value) {
+//        case let .success(previrousValue):
+//            "Error"
+//        case let .failure(error):
+//        switch error {
+//            case let .noPositiveIntegerBefore(thisValue):
+//                "Error"
+//        }
+//    }
+//})
