@@ -132,6 +132,13 @@ if baz == qk {
 }
 
 let poeple2 = Set([baz, qk])
-people2
+poeple2.first!.name
 
-
+let userInfo: [String : Any] = [
+    "name": "Foo",
+    "age": 20,
+    "address": [
+        "line1": "line 1",
+        "postCode": "23123",
+    ]
+]
