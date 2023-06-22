@@ -130,6 +130,6 @@ enum HouseType: Hashable {
     case smallHouse(NumberedHouse)
 }
 
-let bigHouse1 = HouseType(.bigHouse(NumberedHouse(number: 1, numberOfBedrooms: 2)))
-let bigHouse2 = HouseType(.bigHouse(NumberedHouse(number: 3, numberOfBedrooms: 5)))
-let smallHouse1 = HouseType(.bigHouse(NumberedHouse(number: 1, numberOfBedrooms: 1)))
+let bigHouse1 = HouseType( .bigHouse(NumberedHouse(number: 1, numberOfBedrooms: 2)))
+let bigHouse2 = HouseType( .bigHouse(NumberedHouse(number: 3, numberOfBedrooms: 5)))
+let smallHouse1 = HouseType( .smallHouse(NumberedHouse(number: 1, numberOfBedrooms: 1)))
