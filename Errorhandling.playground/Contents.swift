@@ -140,9 +140,19 @@ let dog = Dog(
 )
 
 do {
-    
+    try dog.barkAndRun()
 } catch Dog.BarkingErrors.cannotBarkIsSleeping, Dog.RunningErrors.cannotRunIsInjured {
     "Cannot"
 } catch {
     "Something else"
+}
+
+do {
+    try dog.barkAndRun()
+} catch Dog.BarkingErrors.cannotBarkIsSleeping {
+    "Cannot"
+} catch Dog.RunningErrors.cannotRunIsInjured {
+    "Something else"
+} catch {
+    "Nothing pretty much"
 }
