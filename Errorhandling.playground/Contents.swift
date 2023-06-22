@@ -166,29 +166,44 @@ enum NameErrors: Error {
     case lastNameIsInvalid
 }
 
-func + (
-    firstName: String?,
-    lastName: String?
-) throws -> String? {
-    guard let firstName,
-            !firstName.isEmpty else {
-                throw NameErrors.firstNameIsInvalid
-    }
-    
-    guard let lastName,
-            !lastName.isEmpty else {
-                throw NameErrors.lastNameIsInvalid
-    }
-    
-    return "The first name is and the last name is"
+//func + (
+//    firstName: String?,
+//    lastName: String?
+//) throws -> String {
+//    guard let firstName,
+//            !firstName.isEmpty else {
+//                throw NameErrors.firstNameIsInvalid
+//    }
+//
+//    guard let lastName,
+//            !lastName.isEmpty else {
+//                throw NameErrors.lastNameIsInvalid
+//    }
+//
+//    return "The first name is and the last name is"
+//}
+
+//do {
+//    let fooBar = try fullName(firstName: nil, lastName: nil, calculator: +)
+//} catch NameErrors.firstNameIsInvalid {
+//    "First"
+//} catch NameErrors.lastNameIsInvalid {
+//    "Second"
+//} catch {
+//    "Nothing"
+//}
+
+
+enum IntegerErrors: Error {
+case noPositiveIntegerBefore(thisValue: Int)
 }
 
-do {
-    let fooBar = try fullName(firstName: nil, lastName: nil, calculator: +)
-} catch NameErrors.firstNameIsInvalid {
-    "First"
-} catch NameErrors.lastNameIsInvalid {
-    "Second"
-} catch {
-    "Nothing"
+func getPreviousPositiveInteger(from int: Int) -> Result<Int, IntegerErrors> {
+    guard int > 0 else {
+        return Result.failure(
+            IntegerErrors.noPositiveIntegerBefore(thisValue: int)
+        )
+    }
+    
+    return Result.success(int - 1)
 }
