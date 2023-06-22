@@ -57,3 +57,18 @@ Task {
         "SOmething went wrong"
     }
 }
+
+func getFullName(
+    delay: Duration,
+    calculator: () async -> String
+) async -> String {
+    try? await Task.sleep(for: delay)
+    return await calculator()
+}
+
+func fullName() async -> String {"Foo Bar"}
+Task {
+    await getFullName(delay: .seconds(1), calculator: {
+        <#code#>
+    })
+}
