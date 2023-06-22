@@ -182,3 +182,13 @@ func + (
     
     return "The first name is and the last name is"
 }
+
+do {
+    let fooBar = try fullName(firstName: nil, lastName: nil, calculator: +)
+} catch NameErrors.firstNameIsInvalid {
+    "First"
+} catch NameErrors.lastNameIsInvalid {
+    "Second"
+} catch {
+    "Nothing"
+}
