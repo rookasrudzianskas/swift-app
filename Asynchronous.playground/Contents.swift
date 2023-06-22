@@ -42,3 +42,18 @@ struct Ensemble {
     let clothes: [Clothe]
     let totalPrice: Double
 }
+
+func buyWholeEnsemble() async throws -> Ensemble {
+    async let socks = buySocks()
+    async let shirt = buyShirt()
+    async let throusers = buyTrousers()
+    let ensemble = Ensemble(clothes: await [try socs, try shirt, try throusers], totalPrice: 299) return ensemble
+}
+
+Task {
+    if let ensemble = try? await buyWholeEnsemble() {
+        ensemble
+    } else {
+        "SOmething went wrong"
+    }
+}
