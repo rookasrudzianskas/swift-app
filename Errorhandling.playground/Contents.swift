@@ -90,3 +90,9 @@ do {
     "Some othe reerrror"
 }
 
+
+if let yourCar = try? Car(manufacturer: "Tesla") {
+    "Success you can is tesla"
+} else {
+    "Fail, error is not shown"
+}
