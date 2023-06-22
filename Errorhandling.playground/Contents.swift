@@ -156,3 +156,29 @@ do {
 } catch {
     "Nothing pretty much"
 }
+
+func fullName(firstName: String?, lastName: String?, calculator: (String?, String?) throws -> String?) rethrows -> String? {
+    try calculator(firstName, lastName)
+}
+
+enum NameErrors: Error {
+    case firstNameIsInvalid
+    case lastNameIsInvalid
+}
+
+func + (
+    firstName: String?,
+    lastName: String?
+) throws -> String? {
+    guard let firstName,
+            !firstName.isEmpty else {
+                throw NameErrors.firstNameIsInvalid
+    }
+    
+    guard let lastName,
+            !lastName.isEmpty else {
+                throw NameErrors.lastNameIsInvalid
+    }
+    
+    return "The first name is and the last name is"
+}
