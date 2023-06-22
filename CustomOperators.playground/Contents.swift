@@ -72,4 +72,15 @@ func + (
     return Family(members: members)
 }
 
+func + (
+    lhs: Family,
+    rhs: [Person]
+) -> Family {
+    var members = lhs.members
+    members.append(contentsOf: rhs)
+    return Family(members: members)
+}
+
 let familyWithBro = family + bro
+
+let familyWithSis = familyWithBro + [sis]
