@@ -96,3 +96,7 @@ if let yourCar = try? Car(manufacturer: "Tesla") {
 } else {
     "Fail, error is not shown"
 }
+
+
+let theirCar = try! Car(manufacturer: "Ford")
+theirCar.manufacturer
