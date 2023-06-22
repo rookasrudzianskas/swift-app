@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Hashing.playground">
+   </FileRef>
+   <FileRef
       location = "group:Collections.playground">
    </FileRef>
    <FileRef
