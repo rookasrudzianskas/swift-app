@@ -20,3 +20,25 @@ PlaygroundPage.current.needsIndefiniteExecution = true
 
 
 
+enum Clothe {
+    case socks, shirt, trousers
+}
+
+func buySocks() async throws -> Clothe {
+    try? await Task.sleep(for: .seconds(1))
+}
+
+func buyShirt() async throws -> Clothe {
+    try await Task.sleep(for: .seconds(1))
+    return Clothe.shirt
+}
+
+func buyTrousers() async throws -> Clothe {
+    try await Task.sleep(for: .seconds(1))
+    return Clothe.trousers
+}
+
+struct Ensemble {
+    let clothes: [Clothe]
+    let totalPrice: Double
+}
