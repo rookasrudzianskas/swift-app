@@ -29,24 +29,24 @@ let foo = Person(
     firstName: nil,
     lastName: nil
 )
-
-do {
-    let fullName = try foo.getFullName()
-} catch {
-    "Got an error = \(error)"
-}
-
-
-do {
-    let fullName = try foo.getFullName()
-    fullName
-} catch is Person.Errors {
-    "Got an error"
-}
-
-let bar = Person(
-    firstName: nil, lastName: nil
-)
+//
+//do {
+//    let fullName = try foo.getFullName()
+//} catch {
+//    "Got an error = \(error)"
+//}
+//
+//
+//do {
+//    let fullName = try foo.getFullName()
+//    fullName
+//} catch is Person.Errors {
+//    "Got an error"
+//}
+//
+//let bar = Person(
+//    firstName: nil, lastName: nil
+//)
 
 //do {
 //    let fullName = try bar.getFullName()
@@ -63,6 +63,30 @@ let bar = Person(
 //}
 
 
+struct Car {
+    let manufacturer: String
+    
+    enum Errors: Error {
+        case invalidManufacturer
+    }
+    
+    init(
+        manufacturer: String
+    ) throws {
+        if manufacturer.isEmpty {
+            throw Errors.invalidManufacturer
+        }
+        self.manufacturer = manufacturer
+    }
+}
 
-
+do {
+    let myCar = try Car(manufacturer: "")
+    myCar
+    myCar.manufacturer
+} catch Car.Errors.invalidManufacturer {
+    "Invalud"
+} catch {
+    "Some othe reerrror"
+}
 
