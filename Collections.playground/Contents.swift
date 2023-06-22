@@ -142,3 +142,27 @@ let userInfo: [String : Any] = [
         "postCode": "23123",
     ]
 ]
+
+userInfo["name"]
+userInfo["age"]
+userInfo["address"]
+
+userInfo.keys
+userInfo.values
+
+for (key, value) in userInfo {
+    key
+    value
+}
+
+for (key, value) in userInfo where value is Int {
+    key
+    value
+}
+
+for (key, value) in userInfo where value is Int && key.count > 2 {
+    key
+    value
+}
+
+
